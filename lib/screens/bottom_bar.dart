@@ -1,3 +1,4 @@
+import 'package:booking_tickets_app/screens/home_screen.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,7 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
   int _selectedIndex = 0;
   static final List<Widget> _widgetOptions = <Widget>[
-    const Text('Home'),
+    const HomeScreen(),
     const Text('Search'),
     const Text('Ticket'),
     const Text('Profile'),
@@ -22,10 +23,10 @@ class _BottomBarState extends State<BottomBar> {
       _selectedIndex = index;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
@@ -33,8 +34,7 @@ class _BottomBarState extends State<BottomBar> {
         currentIndex: _selectedIndex,
         onTap: _onSelectedTap,
         elevation: 10,
-       // type: BottomNavigationBarType.fixed,
-       landscapeLayout: BottomNavigationBarLandscapeLayout.centered,
+        type: BottomNavigationBarType.fixed,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         selectedItemColor: Colors.blueGrey,
