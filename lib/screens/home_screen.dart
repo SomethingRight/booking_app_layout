@@ -1,3 +1,4 @@
+import 'package:booking_tickets_app/screens/ticket_view.dart';
 import 'package:booking_tickets_app/utils/app_styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -79,7 +80,17 @@ class HomeScreen extends StatelessWidget {
                                 .copyWith(color: Styles.primaryColor)))
                   ],
                 ),
-              )
+              ),
+              SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  padding: const EdgeInsets.only(left: 20),
+                  child: Row(
+                    children: const [
+                      TicketView(),
+                      TicketView(),
+                       TicketView(),
+                    ],
+                  )),
             ],
           ),
         )
