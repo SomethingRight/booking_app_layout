@@ -1,9 +1,10 @@
 import 'package:booking_tickets_app/utils/app_layout.dart';
 import 'package:booking_tickets_app/utils/app_styles.dart';
-import 'package:booking_tickets_app/widgets/thick_container.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+
+import '../widgets/circle_dot_widget.dart';
 
 class TicketView extends StatelessWidget {
   const TicketView({super.key});
@@ -12,9 +13,19 @@ class TicketView extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = AppLayout.getSize(context);
     return SizedBox(
-        width: size.width*0.85,
-        height: 200,
+        width: size.width * 0.85,
         child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.shade300,
+                blurRadius: 3,
+                spreadRadius: 2,
+                blurStyle: BlurStyle.normal,
+              ),
+            ],
+          ),
           margin: const EdgeInsets.only(right: 18),
           child: Column(
             children: [
@@ -22,10 +33,11 @@ class TicketView extends StatelessWidget {
               */
               Container(
                 decoration: BoxDecoration(
-                    color: Styles.primaryColor,
-                    borderRadius: const BorderRadiusDirectional.only(
-                        topStart: Radius.circular(15),
-                        topEnd: Radius.circular(15))),
+                  color: Styles.primaryColor,
+                  borderRadius: const BorderRadiusDirectional.only(
+                      topStart: Radius.circular(15),
+                      topEnd: Radius.circular(15)),
+                ),
                 padding: const EdgeInsets.all(16),
                 child: Column(
                   children: [
@@ -58,8 +70,10 @@ class TicketView extends StatelessWidget {
                                         height: 1,
                                         width: 3,
                                         child: DecoratedBox(
-                                            decoration: BoxDecoration(
-                                                color: Colors.white)),
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   );
@@ -171,7 +185,8 @@ class TicketView extends StatelessWidget {
               /*Showing the second orange part of ticket
             */
               Container(
-                padding: const EdgeInsets.only(bottom: 16, left: 16,right: 16,top: 10),
+                padding: const EdgeInsets.only(
+                    bottom: 16, left: 16, right: 16, top: 10),
                 decoration: BoxDecoration(
                     color: Styles.orangeColor,
                     borderRadius: const BorderRadius.only(
@@ -183,25 +198,46 @@ class TicketView extends StatelessWidget {
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [Text('1 MAY', style: Styles.ticketStyle,),
-                      const Gap(5),
-                      Text('Date', style: Styles.ticketStyle,)
+                      children: [
+                        Text(
+                          '1 MAY',
+                          style: Styles.ticketStyle,
+                        ),
+                        const Gap(5),
+                        Text(
+                          'Date',
+                          style: Styles.ticketStyle,
+                        )
                       ],
                     ),
-                     Column(
-                       crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [Text('08:00 AM', style: Styles.ticketStyle,),
-                      const Gap(5),
-                      Text('Departure time', style: Styles.ticketStyle,)
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          '08:00 AM',
+                          style: Styles.ticketStyle,
+                        ),
+                        const Gap(5),
+                        Text(
+                          'Departure time',
+                          style: Styles.ticketStyle,
+                        )
                       ],
-                     ),
-                      Column(
-                         crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [Text('23', style: Styles.ticketStyle,),
-                      const Gap(5),
-                      Text('Number', style: Styles.ticketStyle,)
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          '23',
+                          style: Styles.ticketStyle,
+                        ),
+                        const Gap(5),
+                        Text(
+                          'Number',
+                          style: Styles.ticketStyle,
+                        )
                       ],
-                      ),
+                    ),
                   ],
                 ),
               ),

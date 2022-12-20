@@ -1,3 +1,4 @@
+import 'package:booking_tickets_app/screens/hotel_view.dart';
 import 'package:booking_tickets_app/screens/ticket_view.dart';
 import 'package:booking_tickets_app/utils/app_styles.dart';
 import 'package:flutter/cupertino.dart';
@@ -15,9 +16,9 @@ class HomeScreen extends StatelessWidget {
         Container(
           child: Column(
             children: [
-              const Gap(40),
+              const Gap(30),
               Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -49,7 +50,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.fromLTRB(10, 8, 10, 4),
+                padding: const EdgeInsets.fromLTRB(20, 8, 20, 4),
                 child: TextField(
                   enabled: true,
                   decoration: InputDecoration(
@@ -64,8 +65,9 @@ class HomeScreen extends StatelessWidget {
                       )),
                 ),
               ),
+              const Gap(15),
               Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const  EdgeInsets.only(left: 15, top: 10, right: 15),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -81,6 +83,7 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
+              const Gap(15),
               SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   padding: const EdgeInsets.only(left: 20),
@@ -88,9 +91,39 @@ class HomeScreen extends StatelessWidget {
                     children: const [
                       TicketView(),
                       TicketView(),
-                       TicketView(),
+                      TicketView(),
                     ],
                   )),
+                  const Gap(15),
+                   Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Hotels',
+                      style: Styles.headLineStyle2,
+                    ),
+                    TextButton(
+                        onPressed: () {},
+                        child: Text('View all',
+                            style: Styles.textStyle
+                                .copyWith(color: Styles.primaryColor)))
+                  ],
+                ),
+              ),
+            const Gap(10),
+           SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  padding: const EdgeInsets.only(left: 20),
+                  child: Row(
+                    children: const [
+                      HotelView(),
+                      HotelView(),
+                      HotelView(),
+                    ],
+                  )),
+                  const Gap(15),
             ],
           ),
         )
