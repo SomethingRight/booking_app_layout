@@ -7,7 +7,8 @@ import 'package:gap/gap.dart';
 import '../widgets/circle_dot_widget.dart';
 
 class TicketView extends StatelessWidget {
-  const TicketView({super.key});
+   final Map<String, dynamic> ticket;
+  const TicketView({super.key, required this.ticket});
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +45,7 @@ class TicketView extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          'NYC',
+                          ticket['from']['code'],
                           style: Styles.ticketStyle,
                         ),
                         Expanded(child: Container()),
@@ -94,7 +95,7 @@ class TicketView extends StatelessWidget {
                         const CircleDotWidget(),
                         Expanded(child: Container()),
                         Text(
-                          'LDN',
+                          ticket['to']['code'],
                           style: Styles.ticketStyle,
                         ),
                       ],
@@ -104,15 +105,15 @@ class TicketView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'New-York',
+                          ticket['from']['name'],
                           style: Styles.ticketStyle,
                         ),
                         Text(
-                          '8H 31M',
+                          ticket['flying_time'],
                           style: Styles.ticketStyle,
                         ),
                         Text(
-                          'London',
+                          ticket['to']['name'],
                           style: Styles.ticketStyle,
                         ),
                       ],
@@ -200,7 +201,7 @@ class TicketView extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          '1 MAY',
+                         ticket['date'],
                           style: Styles.ticketStyle,
                         ),
                         const Gap(5),
@@ -214,7 +215,7 @@ class TicketView extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          '08:00 AM',
+                          ticket['departure_time'],
                           style: Styles.ticketStyle,
                         ),
                         const Gap(5),
@@ -228,12 +229,12 @@ class TicketView extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
-                          '23',
+                          ticket['place'],
                           style: Styles.ticketStyle,
                         ),
                         const Gap(5),
                         Text(
-                          'Number',
+                          'Place',
                           style: Styles.ticketStyle,
                         )
                       ],
