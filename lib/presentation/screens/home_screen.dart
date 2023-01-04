@@ -1,10 +1,12 @@
-import 'package:booking_tickets_app/screens/hotel_view.dart';
-import 'package:booking_tickets_app/screens/ticket_view.dart';
-import 'package:booking_tickets_app/utils/app_info_list.dart';
+import 'package:booking_tickets_app/presentation/views/hotel_view.dart';
+import 'package:booking_tickets_app/presentation/views/ticket_view.dart';
 import 'package:booking_tickets_app/utils/app_styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+
+import '../../data/models/hotel_models.dart';
+import '../../data/models/ticket_models.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

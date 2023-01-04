@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-import '../widgets/circle_dot_widget.dart';
+import '../../widgets/circle_dot_widget.dart';
 
 class TicketView extends StatelessWidget {
    final Map<String, dynamic> ticket;

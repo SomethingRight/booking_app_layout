@@ -1,6 +1,6 @@
 import 'package:booking_tickets_app/utils/app_styles.dart';
 
-import './screens/bottom_bar.dart';
+import 'presentation/screens/bottom_bar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -23,17 +23,10 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-
-  @override
+ @override
   Widget build(BuildContext context) {
     return const BottomBar();
   }
